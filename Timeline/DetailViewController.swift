@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
 
 
     var detailItem: AnyObject? {
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.valueForKey("timeStamp")!.description
             }
+            photoImageView?.image = detail.valueForKey("photo") as? UIImage
         }
     }
 
